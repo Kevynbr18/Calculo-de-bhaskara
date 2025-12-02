@@ -40,7 +40,7 @@ section {
 }
 
 .dark section {
-    background: #697fb4;
+    background: #435169;
     box-shadow: 0px 0px 5px #000;
 }
 
@@ -73,6 +73,31 @@ table th, table td {
 .alerta {
     color: red;
     font-size: 14px;
+}
+
+.voz {
+    background: #3670ff;
+    padding: 10px 18px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.voz:hover {
+    background: #244ed1;
+}
+
+.qr {
+    text-align: center;
+}
+
+#qrImg {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
 }
 
 @media (max-width: 600px) {

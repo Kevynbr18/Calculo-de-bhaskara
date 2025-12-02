@@ -1,10 +1,17 @@
 let grafico = null;
 const historico = [];
 
+/* =======================
+   Alternar Tema
+======================= */
 document.getElementById("temaBtn").addEventListener("click", () => {
     document.body.classList.toggle("dark");
+    if (grafico) gerarGraficoUltimo();
 });
 
+/* =======================
+   Cálculo de Bhaskara
+======================= */
 function calcularBhaskara() {
     const a = Number(document.getElementById("a").value);
     const b = Number(document.getElementById("b").value);
@@ -73,6 +80,9 @@ function adicionarAoHistorico(a, b, c, x1, x2) {
     });
 }
 
+/* =======================
+   Gráfico
+======================= */
 function gerarGrafico(a, b, c, x1, x2, delta) {
     const ctx = document.getElementById("grafico");
 
@@ -89,6 +99,11 @@ function gerarGrafico(a, b, c, x1, x2, delta) {
         marcadores.push({ x: x2, y: 0 });
     }
 
+    const modoEscuro = document.body.classList.contains("dark");
+
+    const corParabola = modoEscuro ? "white" : "black";
+    const corRaizes = modoEscuro ? "yellow" : "red";
+
     grafico = new Chart(ctx, {
         type: "scatter",
         data: {
@@ -97,13 +112,16 @@ function gerarGrafico(a, b, c, x1, x2, delta) {
                     label: "Parábola",
                     data: pontos,
                     showLine: true,
+                    borderColor: corParabola,
                     borderWidth: 2,
+                    pointRadius: 0
                 },
                 {
                     label: "Raízes",
                     data: marcadores,
                     pointRadius: 6,
-                    borderColor: "red",
+                    backgroundColor: corRaizes,
+                    borderColor: corRaizes
                 }
             ],
         },
@@ -114,4 +132,55 @@ function gerarGrafico(a, b, c, x1, x2, delta) {
             }
         }
     });
+
+    ultimo = { a, b, c, x1, x2, delta };
 }
+
+function gerarGraficoUltimo() {
+    if (ultimo) gerarGrafico(ultimo.a, ultimo.b, ultimo.c, ultimo.x1, ultimo.x2, ultimo.delta);
+}
+
+let ultimo = null;
+
+/* =======================
+   Entrada por Voz
+======================= */
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const reconhecimento = new SpeechRecognition();
+reconhecimento.lang = "pt-BR";
+reconhecimento.continuous = false;
+reconhecimento.interimResults = false;
+
+document.getElementById("vozBtn").addEventListener("click", () => {
+    reconhecimento.start();
+});
+
+reconhecimento.onresult = function(event) {
+    const frase = event.results[0][0].transcript.toLowerCase();
+
+    const valorA = frase.match(/a\s*(igual\s*a)?\s*(-?\d+[\.,]?\d*)/);
+    const valorB = frase.match(/b\s*(igual\s*a)?\s*(-?\d+[\.,]?\d*)/);
+    const valorC = frase.match(/c\s*(igual\s*a)?\s*(-?\d+[\.,]?\d*)/);
+
+    if (valorA) document.getElementById("a").value = valorA[2].replace(",", ".");
+    if (valorB) document.getElementById("b").value = valorB[2].replace(",", ".");
+    if (valorC) document.getElementById("c").value = valorC[2].replace(",", ".");
+
+    alert("Coeficientes preenchidos pela voz.");
+};
+
+reconhecimento.onerror = function(e) {
+    alert("Erro ao usar a entrada por voz: " + e.error);
+};
+
+/* =======================
+   QR Code
+======================= */
+function gerarQRCode() {
+    const url = window.location.href;
+    const api = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
+    document.getElementById("qrImg").src = api;
+}
+
+gerarQRCode();
