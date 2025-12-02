@@ -1,5 +1,4 @@
 CALCULADORA DE BHASKARA — FUNCIONALIDADES
-Feito por: Kevyn Bruno Dos Santos Leal
 
 1. Insira os valores de A, B e C para calcular a equação do segundo grau.
 2. O programa faz validações:
@@ -12,4 +11,3 @@ Feito por: Kevyn Bruno Dos Santos Leal
 7. Um histórico é salvo com todas as equações resolvidas.
 8. Há modo claro e escuro.
 9. O site é totalmente responsivo.
-

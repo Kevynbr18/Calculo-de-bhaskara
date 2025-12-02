@@ -13,7 +13,7 @@ body {
 
 .dark {
     background: #1e293b;
-    color: #f2f2f2;
+    color: #ffffff;
 }
 
 header {
@@ -84,4 +84,3 @@ table th, table td {
         font-size: 14px;
     }
 }
-
