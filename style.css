@@ -40,7 +40,7 @@ section {
 }
 
 .dark section {
-    background: #0f172a;
+    background: #697fb4;
     box-shadow: 0px 0px 5px #000;
 }
 
@@ -84,3 +84,4 @@ table th, table td {
         font-size: 14px;
     }
 }
+
