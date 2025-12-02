@@ -1,194 +1,270 @@
-/* === RESET E BASE === */
+/* =======================
+      RESET & BASE
+======================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: #f4f4f4;
-    color: #222;
+    background: #eef1f5;
+    color: #1e1e1e;
     padding: 20px;
-    line-height: 1.5;
+    transition: 0.3s ease;
 }
 
 .dark {
-    background: #1e293b;
-    color: #ffffff;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-/* ===== HEADER ===== */
+/* =======================
+        HEADER
+======================= */
 header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    padding: 20px 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+header p {
+    opacity: 0.8;
+    margin-top: 6px;
 }
 
 header button {
-    margin-top: 10px;
-    padding: 8px 15px;
+    margin-top: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-size: 16px;
-    border-radius: 6px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
-/* ===== LAYOUT ===== */
+header button:hover {
+    background: #1e49aa;
+}
+
+/* =======================
+        CONTAINERS
+======================= */
 main {
     max-width: 900px;
     margin: auto;
-    padding-bottom: 30px;
 }
 
 section {
-    margin-bottom: 30px;
-    padding: 18px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    background: #ffffff;
+    padding: 22px;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .dark section {
-    background: #435169;
-    box-shadow: 0px 0px 5px #000;
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
-/* ===== FORM ELEMENTS ===== */
+section h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-left: 6px solid #2563eb;
+    padding-left: 10px;
+}
+
+/* =======================
+        FORM
+======================= */
 label {
     display: block;
-    margin-top: 12px;
     font-size: 15px;
+    font-weight: 500;
+    margin-top: 12px;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 11px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.3);
 }
 
 button {
-    margin-top: 18px;
-    padding: 10px 22px;
+    padding: 11px 20px;
     font-size: 16px;
-    border-radius: 6px;
     cursor: pointer;
-}
-
-/* ===== ALERTAS ===== */
-.alerta {
-    color: red;
-    font-size: 14px;
-}
-
-/* ===== BOTÃO DE VOZ ===== */
-.voz {
-    background: #3670ff;
-    padding: 12px 20px;
-    color: white;
+    border-radius: 8px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 12px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 240px;
+    background: #2563eb;
+    color: white;
+    margin-top: 18px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1e49aa;
+}
+
+/* Botão de voz */
+.voz {
+    background: #10b981;
 }
 
 .voz:hover {
-    background: #244ed1;
+    background: #0a7b60;
 }
 
-/* ===== QR CODE ===== */
-.qr {
-    text-align: center;
-    width: 280px;
-}
-
-#qrImg {
-    width: 180px;
-    height: 180px;
+/* =======================
+       ALERTA
+======================= */
+.alerta {
+    color: #e11d48;
     margin-top: 10px;
-    transition: 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-@media (max-width: 450px) {
-    #qrImg {
-        width: 140px;
-        height: 140px;
-    }
+/* =======================
+        QR CODE
+======================= */
+#qrImg {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    transition: 0.3s;
 }
 
-/* ===== TABELA ===== */
+#qrImg:hover {
+    transform: scale(1.05);
+}
+
+/* =======================
+        TABELAS
+======================= */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
 }
 
+table thead {
+    background: #2563eb;
+    color: white;
+}
+
+.dark table thead {
+    background: #334155;
+}
+
 table th, table td {
-    border: 1px solid #ddd;
     padding: 10px;
-    text-align: left;
+    border: 1px solid #cbd5e1;
+    text-align: center;
 }
 
-/* Envolver tabela para rolar horizontalmente em telas pequenas */
-.table-container {
+.dark table td {
+    border-color: #475569;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.dark table tbody tr:nth-child(even) {
+    background: #334155;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    overflow-x: auto;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
-/* ===== MEDIA QUERIES ===== */
+.popup-content {
+    background: white;
+    width: 90%;
+    max-width: 650px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
 
-@media (max-width: 800px) {
-    body {
+.dark .popup-content {
+    background: #1e293b;
+}
+
+.popup-btns {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+
+.popup button {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+}
+
+
+/* =======================
+       RESPONSIVIDADE
+======================= */
+@media (max-width: 600px) {
+    section {
         padding: 15px;
     }
 
-    section {
-        padding: 15px;
+    header h1 {
+        font-size: 1.5rem;
     }
 
     button {
         width: 100%;
     }
 
-    .voz {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    section {
-        padding: 12px;
-    }
-
-    table th, table td {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    header button {
-        width: 100%;
-        max-width: 260px;
+    #qrImg {
+        width: 150px;
+        height: 150px;
     }
 }
 
 @media (max-width: 400px) {
-    body {
-        padding: 10px;
-    }
-
-    section {
-        padding: 10px;
-        border-radius: 6px;
-    }
-
     input {
-        padding: 8px;
-    }
-
-    button {
-        padding: 9px 18px;
+        padding: 9px;
     }
 
     table th, table td {

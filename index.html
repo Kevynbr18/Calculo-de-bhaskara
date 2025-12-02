@@ -60,11 +60,35 @@
 
     <section id="graficoSecao">
         <h2>Gráfico da Função</h2>
-        <canvas id="grafico"></canvas>
+<div style="width: 100%; height: 380px;">
+    <canvas id="grafico"></canvas>
+</div>
     </section>
 
     <section id="historico">
-        <h2>Histórico</h2>
+    <h2>Histórico</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>x1</th>
+                <th>x2</th>
+            </tr>
+        </thead>
+        <tbody id="historicoLista"></tbody>
+    </table>
+
+    <button id="verMaisBtn">Ver Mais</button>
+</section>
+
+
+    <!-- POPUP DO HISTÓRICO COMPLETO -->
+<div id="popupHistorico" class="popup">
+    <div class="popup-content">
+        <h2>Histórico Completo</h2>
+
         <table>
             <thead>
                 <tr>
@@ -73,13 +97,18 @@
                     <th>C</th>
                     <th>x1</th>
                     <th>x2</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
-            <tbody id="historicoLista"></tbody>
+            <tbody id="popupLista"></tbody>
         </table>
-    </section>
 
-    
+        <div class="popup-btns">
+            <button id="limparTudoBtn">Excluir Tudo</button>
+            <button id="fecharPopup">Fechar</button>
+        </div>
+    </div>
+</div>
 
 </main>
 
