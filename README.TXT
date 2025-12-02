@@ -11,3 +11,5 @@ CALCULADORA DE BHASKARA — FUNCIONALIDADES
 7. Um histórico é salvo com todas as equações resolvidas.
 8. Há modo claro e escuro.
 9. O site é totalmente responsivo.
+10.Entrada de Voz.
+11.Tem um QR Code pra celular.

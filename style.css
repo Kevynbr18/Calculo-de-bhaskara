@@ -1,14 +1,16 @@
+/* === RESET E BASE === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 body {
     background: #f4f4f4;
     color: #222;
     padding: 20px;
+    line-height: 1.5;
 }
 
 .dark {
@@ -16,6 +18,7 @@ body {
     color: #ffffff;
 }
 
+/* ===== HEADER ===== */
 header {
     text-align: center;
     margin-bottom: 25px;
@@ -23,20 +26,24 @@ header {
 
 header button {
     margin-top: 10px;
-    padding: 6px 12px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 6px;
 }
 
+/* ===== LAYOUT ===== */
 main {
     max-width: 900px;
     margin: auto;
+    padding-bottom: 30px;
 }
 
 section {
     margin-bottom: 30px;
-    padding: 15px;
+    padding: 18px;
     background: white;
-    border-radius: 6px;
-    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
 }
 
 .dark section {
@@ -44,21 +51,74 @@ section {
     box-shadow: 0px 0px 5px #000;
 }
 
+/* ===== FORM ELEMENTS ===== */
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 15px;
 }
 
 input {
     width: 100%;
-    padding: 6px;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px 20px;
+    margin-top: 18px;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
+/* ===== ALERTAS ===== */
+.alerta {
+    color: red;
+    font-size: 14px;
+}
+
+/* ===== BOTÃO DE VOZ ===== */
+.voz {
+    background: #3670ff;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 240px;
+}
+
+.voz:hover {
+    background: #244ed1;
+}
+
+/* ===== QR CODE ===== */
+.qr {
+    text-align: center;
+    width: 280px;
+}
+
+#qrImg {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 450px) {
+    #qrImg {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* ===== TABELA ===== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,45 +127,71 @@ table {
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
+    text-align: left;
 }
 
-.alerta {
-    color: red;
-    font-size: 14px;
+/* Envolver tabela para rolar horizontalmente em telas pequenas */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.voz {
-    background: #3670ff;
-    padding: 10px 18px;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 15px;
-}
+/* ===== MEDIA QUERIES ===== */
 
-.voz:hover {
-    background: #244ed1;
-}
+@media (max-width: 800px) {
+    body {
+        padding: 15px;
+    }
 
-.qr {
-    text-align: center;
-}
+    section {
+        padding: 15px;
+    }
 
-#qrImg {
-    width: 180px;
-    height: 180px;
-    margin-top: 10px;
+    button {
+        width: 100%;
+    }
+
+    .voz {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
     section {
-        padding: 10px;
+        padding: 12px;
     }
 
     table th, table td {
         font-size: 14px;
+        padding: 8px;
+    }
+
+    header button {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    section {
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 9px 18px;
+    }
+
+    table th, table td {
+        font-size: 13px;
     }
 }
